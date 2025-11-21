@@ -13,13 +13,21 @@ pipeline{
                 echo 'Execting scripted stage'
                 script{
                     def course="k8s"
-                    if(course == "k8s"){
+                    if(course == k8s){
                         println("Thanks for enroling it $course")
                     }
                     else{
                         println("Do learn k8s")
                     }
+                    sleep(10)
                 }
+                
+            }
+        }
+         stage('Sonar'){
+            steps{
+                echo 'Execting sonar stage'
+                
             }
         }
     }
