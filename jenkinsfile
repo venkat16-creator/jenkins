@@ -1,0 +1,26 @@
+.pipeline{
+    agent{
+        label 'java-agent-slave'
+    }
+    stages{
+        stage('Build'){
+            steps{
+                echo 'This is the stage for Building Maven app'
+            }
+        }
+        stage('ScriptedStage'){
+            steps{
+                echo 'Execting scripted stage'
+                script{
+                    def course="k8s"
+                    if(course == k8s){
+                        println("Thanks for enroling it $course")
+                    }
+                    else{
+                        println("Do learn k8s")
+                    }
+                }
+            }
+        }
+    }
+}
